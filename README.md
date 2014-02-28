@@ -105,3 +105,8 @@ Opera 10.5+<br>
 Safari 3.1+
 
 [Timing-Functions-Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function#Browser_compatibility)
+
+License
+=======
+
+This project is licensed under the terms of [MIT License](http://opensource.org/licenses/MIT)
