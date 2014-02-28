@@ -4,7 +4,7 @@ Medium Slider is a simple slide-panel implementation. Inspired from [medium](htt
 
 Demo
 ====
-Checkout the [Demo](http://sudharti.github.io/medium-slider/)
+Checkout the [Demo](http://sudharti.github.io/medium-slider.js/)
 
 Usage
 =====
@@ -84,7 +84,18 @@ window.onload = function(){
 	};
 };
 ```
+Options
+-------
+``` javascript
+new Slider.Slide(button,[options]);
+```
+The various options the method can take are:
 
+- `panel` - Panel Id
+- `dir` - left, right, top, bottom
+- `type` - push, overlay
+- `open` - Callback function on slider open
+- `close` - Callback function on slider close
 
 Cubic Bezier Transition
 =======================
