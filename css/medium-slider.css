@@ -1,0 +1,110 @@
+.mdm-body{
+	margin: 0;
+	overflow: hidden;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+.mdm-overlay{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: none;
+}
+
+.wrapper, .mdm-left-panel, .mdm-right-panel, .mdm-top-panel, .mdm-bottom-panel{
+	visibility: visible !important;
+	-webkit-transition: -webkit-transform .2s cubic-bezier(0.2,0.3,0.25,0.9);
+	-moz-transition: -moz-transform .2s cubic-bezier(0.2,0.3,0.25,0.9) 0s;
+	-o-transition: -o-transform .2s cubic-bezier(0.2,0.3,0.25,0.9);
+	transition: transform .2s cubic-bezier(0.2,0.3,0.25,0.9) 0s;
+}
+						
+.mdm-left-panel, .mdm-right-panel{
+	width: 250px !important;
+	height: 100%;
+	display: inline-block;
+}
+
+.mdm-right-panel{
+	right: 0;
+	margin-right: -250px !important;
+}
+
+.mdm-top-panel, .mdm-bottom-panel{
+	width: 100%;
+	height: 150px !important;
+	display: inline-block;
+	left: 0 !important;
+	margin-left: 0px !important;
+}
+
+.mdm-top-panel{
+	top: 0;
+	margin-top: -150px;
+}
+
+.mdm-bottom-panel{
+	bottom: 0;
+	margin-bottom: -150px;
+}
+
+.mdm-slide-in-left{
+	-webkit-transform: translate3d(250px,0,0);
+	-moz-transform: translate3d(250px,0,0);
+	-ms-transform: translate3d(250px,0,0);
+	-o-transform: translate3d(250px,0,0);
+	transform: translate3d(250px,0,0);
+}
+
+.mdm-slide-in-right{
+	-webkit-transform: translate3d(-250px,0,0);
+	-moz-transform: translate3d(-250px,0,0);
+	-ms-transform: translate3d(-250px,0,0);
+	-o-transform: translate3d(-250px,0,0);
+	transform: translate3d(-250px,0,0);	
+}
+
+.mdm-slide-in-top{
+	-webkit-transform: translate3d(0,150px,0);
+	-moz-transform: translate3d(0,150px,0);
+	-ms-transform: translate3d(0,150px,0);
+	-o-transform: translate3d(0,150px,0);
+	transform: translate3d(0,150px,0);
+}
+
+.mdm-slide-in-bottom{
+	-webkit-transform: translate3d(0,-150px,0);
+	-moz-transform: translate3d(0,-150px,0);
+	-ms-transform: translate3d(0,-150px,0);
+	-o-transform: translate3d(0,-150px,0);
+	transform: translate3d(0,-150px,0);
+}
+
+.mdm-slide-out{
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+.mdm-hide-overflow{
+	overflow: hidden !important;
+}
+
+.mdm-panel{
+	position: fixed;
+	visibility: hidden;
+	margin-left: -250px;
+	border-radius: 0;
+}
+
+.wrapper{
+	height: 100%;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
