@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>medium-slider.js - demo</title>
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="Medium slider" charset="utf-8">
-		<script src="js/util.js" type="text/javascript"></script>
-
-		<link rel="stylesheet" href="../css/medium-slider.css" type="text/css" charset="utf-8">
-		<script src="../js/medium-slider.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	
-	<body>
-		<div id="panelLeft" class="mdm-panel">
-			<div style="margin-top: 50px; color: white;">
-				<ul class="list">
-					<li class="list-item">One</li>
-					<li class="list-item">Two</li>
-					<li class="list-item">Three</li>
-					<li class="list-item">Four</li>
-					<li class="list-item">Five</li>
-				</ul>
+<head>
+	<title>medium-slider.js - demo</title>
+	<link rel="stylesheet" href="../dist/css/medium-slider.min.css" type="text/css" charset="utf-8">
+	<style>
+		.panel {
+			background-color: #000;
+			color: #fff;
+		}
+	</style>
+</head>
+<body data-slide="push">
+	<div id="panel-id" class="slider-panel">
+		<ul class="list">
+			<li class="list-item">One</li>
+			<li class="list-item">Two</li>
+			<li class="list-item">Three</li>
+			<li class="list-item">Four</li>
+			<li class="list-item">Five</li>
+		</ul>
+	</div>
+	<div class="wrapper">
+		<nav class="navbar navbar-default navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a id="sample-btn" class="navbar-brand" href="#" data-panel="panel-id">P</a>
+				</div>
 			</div>
-		</div>
-		<div class="wrapper">
-			<button id="slide_button_left">M</button>
-			<div id="content">
+		</nav>
+
+		<!-- page content here -->
+		<div class="container">
 				<h2>Medium Slider Demo</h2>
 				<h4>What is Medium Slider?</h4>
 				<a href="https://github.com/sudharti/medium-slider/" target="_blank">medium-slider.js</a>
@@ -37,7 +44,9 @@
 					<li>Opera 10.5+</li>
 					<li>Safari 3.1+</li>
 				</ul>
-			</div>
 		</div>
-	</body>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="../dist/js/medium-slider.js" type="text/javascript" charset="utf-8"></script>
+</body>
 </html>

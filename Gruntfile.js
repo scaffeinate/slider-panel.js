@@ -14,28 +14,12 @@ module.exports = function(grunt) {
     clean: {
       dist: ['dist']
     },
-
-    // Task configuration.
-    concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: false
-      },
-      dist: {
-        src: ['src/js/*.js'],
-        dest: 'dist/js/<%= pkg.name %>.js'
-      },
-      distCss: {
-        src: ['dist/css/*.css'],
-        dest: 'dist/css/<%= pkg.name %>.css'
-      }
-    },
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
       dist: {
-        src: ['<%= concat.dist.dest %>'],
+        src: 'dist/js/medium-slider.js',
         dest: 'dist/js/<%= pkg.name %>.min.js'
       }
     },
@@ -59,9 +43,13 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      all: {
-        files: '**/*.scss',
-        tasks: ['default']
+      
+    },
+    coffee: {
+      compile: {
+        files: {
+          'dist/js/medium-slider.js': 'src/js/medium-slider.coffee', // 1:1 compile
+        }
       }
     },
     sass: {
@@ -90,7 +78,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default task
-  grunt.registerTask('default', ['clean', 'sass', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['clean', 'sass', 'coffee', 'uglify', 'cssmin']);
 
   // Sass compile task.
   grunt.registerTask('compileSass', ['sass']);
