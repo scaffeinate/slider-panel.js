@@ -1,80 +1,92 @@
-//Enclose within Namespace Slider
-var Slider = {
-	mdm_ovrlay: '',
-	z: 0,
-	mdm_panel: '',
-	mdm_dir: '',
-	mdm_type: '',
-	mdm_wrap: '',
-	mdm_btn: '',
-	mdm_slide_type: '',
-	callback_op_func: function(){
-	},
-	callback_cl_func: function(){
-	},
-	slide_position: 0,
-	body: '',
-	Initialize: function(){
-		if(Slider.slide_position == 0){
-			mdm_ovrlay = document.createElement('div');
-			mdm_ovrlay.id = 'overlay';
-			mdm_ovrlay.className = 'mdm-overlay';
-			mdm_ovrlay.onclick = function(){Slider.MakeSlide();}
-			document.body.appendChild(mdm_ovrlay);
-			document.body.insertBefore(mdm_ovrlay, document.body.firstChild);
-			document.body.className += ' mdm-body';
-		}	
-		mdm_wrap = document.getElementsByClassName('wrapper')[0];
-	},
-	Slide: function(btn, parameters){
-		
-		Slider.Initialize();
-		
-		mdm_btn = btn;
-		parameters = (parameters == undefined) ?  {} : parameters;
-		mdm_type = (parameters.type == undefined) ? mdm_btn.getAttribute('data-type') : parameters.type;
-		mdm_dir = (parameters.dir == undefined) ? mdm_btn.getAttribute('data-dir') : parameters.dir;
-		mdm_panel = document.getElementById((parameters.panel == undefined) ? mdm_btn.getAttribute('data-panel') : parameters.panel);
-		Slider.callback_op_func = (parameters.open == undefined) ? function(){} : parameters.open;
-		Slider.callback_cl_func = (parameters.close == undefined) ? function(){} : parameters.close;
-		
-		if(Slider.slide_position == 0){
-			Slider.z = (document.body.style.zIndex == 'auto')?0:document.body.style.zIndex;
-			mdm_btn.style.zIndex = Slider.z + 1;
-			mdm_ovrlay.style.zIndex = Slider.z+1;
-		}
-		
-		mdm_panel.style.zIndex = Slider.z + 2;
-		
-		mdm_panel.classList.remove('mdm-'+mdm_dir+'-panel');
-		mdm_panel.className += ' mdm-'+mdm_dir+'-panel';
-		mdm_slide_type = 'mdm-slide-in-'+mdm_dir;
-		
-		Slider.MakeSlide();
-	},
-	MakeSlide: function(){
-		
-		if(Slider.slide_position%2 == 0){
-			mdm_panel.classList.remove('mdm-slide-out');
-			mdm_panel.className += ' ' + mdm_slide_type;
-			if(mdm_type == 'push'){
-				mdm_wrap.classList.remove('mdm-slide-out');
-				mdm_wrap.className += ' ' + mdm_slide_type;
-			}
-			mdm_wrap.className += ' mdm-hide-overflow';
-			mdm_ovrlay.style.display = 'block';
-			Slider.callback_op_func();
-		}else{
-			mdm_panel.classList.remove(mdm_slide_type);
-			mdm_panel.className += ' mdm-slide-out';
-			if(mdm_type == "push"){
-				mdm_wrap.classList.remove(mdm_slide_type);
-				mdm_wrap.className += ' mdm-slide-out';
-			}
-			mdm_wrap.classList.remove('mdm-hide-overflow');
-			mdm_ovrlay.style.display = 'none';
-			Slider.callback_cl_func();
-		}	
-		Slider.slide_position++;
-	}
-};
++function (global, $) {
+  'use strict';
+
+  var position = 0, zIndex = 0;
+
+  var SlidePanel = function(element, options) {
+    this.init(element, options);
+  };
+
+  SlidePanel.DEFAULTS = {
+    overlayClass: 'overlay',
+    bodyClass: 'body',
+    dirClass: 'left-panel',
+    slideInClass: 'slide-in-left',
+    slideOutClass: 'slide-out',
+    overlayTemplate: '<div id="overlay" class="overlay"></div>'
+  };
+
+  SlidePanel.prototype.init = function(element, options) {
+    this.$element = $(element);
+    this.options = options;
+    this.$panel = $('#'+options.panel);
+    var _this = this;
+
+    if(position == 0) {
+      $('body').prepend(this.options.overlayTemplate);
+      $('#overlay').click(function() {
+        _this.slide();
+      });
+    }
+
+    this.$overlay = $('#overlay');
+
+    if($('body').css('zIndex') == 'auto') {
+      zIndex = 0;
+    } else {
+      zIndex = $('body').css('zIndex');
+    }
+    
+    this.$element.css('zIndex', zIndex+1);
+    this.$overlay.css('zIndex', zIndex+1);
+    this.$panel.css('zIndex', zIndex+2);      
+
+    this.$panel.removeClass(this.options.dirClass);
+    this.$panel.addClass(this.options.dirClass);
+    this.$panel.addClass(this.options.slideInClass);
+
+    this.slide();
+  };
+
+  SlidePanel.prototype.slide = function() {
+    if(position%2 == 0) {
+      this.$panel.removeClass(this.options.slideOutClass);
+      this.$panel.addClass(this.options.slideInClass);
+      $('.wrapper').addClass(this.options.slideInClass);
+      $('body').addClass('hide-overflow');
+      this.$overlay.css('display', 'block');
+    } else {
+      this.$panel.removeClass(this.options.slideInClass);
+      this.$panel.addClass('slide-out');
+      $('.wrapper').removeClass(this.options.slideInClass);
+      $('body').removeClass('hide-overflow');
+      this.$overlay.css('display', 'none');
+    }
+
+    position++;
+  };
+
+  function Plugin() {
+    return this.each(function () {
+      var $this   = $(this);
+      var options = $.extend({}, SlidePanel.DEFAULTS, $this.data());
+      new SlidePanel(this, options);
+    });
+  };
+
+  var old = $.fn.button;
+
+  $.fn.slidepanel = Plugin;
+  $.fn.slidepanel.Constructor = SlidePanel;
+
+  $(window).on('load', function () {
+    $('body').find('[data-panel]').each(function () {
+      var $this = $(this);
+      $this.click(function(e){
+        e.preventDefault();
+        Plugin.call($this);
+      });
+    });
+  });
+
+} (this, jQuery);
