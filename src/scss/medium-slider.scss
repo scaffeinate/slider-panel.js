@@ -6,7 +6,7 @@ body[data-slide='push'] {
   width: 100%;
 }
 
-.overlay{
+.overlay {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -95,9 +95,9 @@ body[data-slide='push'] {
   overflow: hidden !important;
 }
 
-.panel{
+.slider-panel{
   position: fixed;
-  visibility: hidden;
+  visibility: visible;
   margin-left: -300px;
   border-radius: 0;
 }
