@@ -1,0 +1,6 @@
+@mixin transform($p0, $p1, $p2, $p3, $time) {
+  -webkit-transition: -webkit-transform $time cubic-bezier($p0, $p1, $p2, $p3);
+  -moz-transition: -moz-transform $time cubic-bezier($p0, $p1, $p2, $p3) 0s;
+  -o-transition: -o-transform $time cubic-bezier($p0, $p1, $p2, $p3);
+  transition: transform $time cubic-bezier($p0, $p1, $p2, $p3) 0s;
+}

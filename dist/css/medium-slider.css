@@ -10,15 +10,14 @@ body[data-slide='push'] {
   height: 100%;
   position: fixed;
   display: none;
-  background-color: rgba(0, 0, 0, 0.25); 
-}
+  background-color: rgba(0, 0, 0, 0.25); }
 
 .wrapper, .slider-panel {
   visibility: visible !important;
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
-  -moz-transition: -moz-transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
-  -o-transition: -o-transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
-  transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+  -o-transition: -o-transform 0.3s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+  transition: transform 0.3s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
 
 .left-panel, .right-panel {
   width: 300px !important;
