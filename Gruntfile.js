@@ -48,7 +48,10 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'dist/js/medium-slider.js': 'src/js/medium-slider.coffee', // 1:1 compile
+          'dist/js/medium-slider.js': 'src/coffee/medium-slider.coffee', // 1:1 compile
+        },
+        options: {
+          bare: true
         }
       }
     },
