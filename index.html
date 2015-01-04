@@ -9,11 +9,95 @@
   <title>medium-slider.js</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="dist/css/medium-slider.min.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="assets/css/prism.css" type="text/css" charset="utf-8">
 </head>
-<body>
+<body data-slide="push">
+  <div id="panel-left" class="slider-panel">
+    <ul>
+      <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+      <li><i class="fa fa-folder-o"></i><a href="#">Collections</a></li>
+      <li><i class="fa fa-bookmark"></i><a href="#">Bookmarks</a></li>
+      <li><i class="fa fa-bar-chart"></i><a href="#">Stats</a></li>
+      <li><i class="fa fa-plus"></i><a href="#">New Story</a></li>
+    </ul>
+  </div>
+  <div class="wrapper">
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" id="slide-btn" data-panel="panel-left" data-dir="left">M</a>
+          <a href="#" class="navbar-brand">medium-slider.js</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="getting-started.html">Getting Started</a></li>
+            <li><a href="../templates/index.html">Templates</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2><b>Slider Panel</b></h2>
+          <h3><b>Docs</b></h3><hr>
+          A simple sliding panel to display off-canvas contents. The panel pushes the exiting body content to the right and smoothly transitions into the view area. This addon uses css transforms (translate3d) and cubic bezier transitions to achieve the sliding effect. 
+          <h4><b>Browser Compatability</b></h4>
+          <ul>
+            <li>Firefox 4.0 (2.0)+</li>
+            <li>Chrome 4.0+</li>
+            <li>Internet Explorer 10+ (Really? Even IE? :O)</li>
+            <li>Opera 10.5+</li>
+            <li>Safari 3.1+</li>
+          </ul><br>
+          <h4><b>Getting Started</b></h4>
+          Add data-slide="push" to &lt;body&gt;
+          <br><br>
+          <pre><code class="language-markup">&lt;body data-slide='push'&gt;</code></pre>
+          <br>
+          Add Panel content &lt;div class="slider-panel"&gt;&lt;/div&gt;
+          <br><br>
+          <pre><code class="language-markup">&lt;div id='example-panel' class='slider-panel'&gt;&lt;/div&gt;</code></pre>
+          <br>
+          Enclose the page content inside a .wrapper class &lt;div class="wrapper"&gt;&lt;/div&gt;
+          <br><br>
+          <pre><code class="language-markup">&lt;div class='wrapper'&gt;...&lt;/div&gt;</code></pre>
+          <br>
+          Add data-panel="[div-id]" to the &lt;button&gt; or &lt;a&gt; which on clicked will trigger the slide transition
+          <br><br>
+          <pre><code class="language-markup">&lt;a href='#' data-panel='example-panel'&gt;slide&lt;/a&gt;</code></pre>
+          <br>
+          Voila! Nothing else to do! Check out the example code below. Also view the demo by clicking at the top left button in the navbar.
+          <h3><b>Example</b></h3><hr>
+          <pre data-src="template.html"></pre>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-lg-offset-1 text-center">
+            <span>Released under MIT License</span> | 
+            <span>Built on <a href="http://getbootstrap.com/">Bootstrap</a></span> |
+            <span>Made by <a href="https://github.com/sudharti">sudharti</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/prism.js"></script>
   <script src="dist/js/medium-slider.min.js" type="text/javascript" charset="utf-8"></script>
   <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
