@@ -13,7 +13,7 @@ A simple sliding panel to display off-canvas contents. The panel pushes the exit
 
 Getting Started
 ===============
-- Download
+- [Download](https://github.com/sudharti/medium-slider.js/archive/v1.0.zip)
 - Checkout the Docs at [http://sudharti.github.io/medium-slider.js/](http://sudharti.github.io/medium-slider.js/)
 
 PR
