@@ -14,15 +14,16 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="assets/css/prism.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="assets/css/fontello-embedded.css" type="text/css" charset="utf-8">
 </head>
 <body data-slide="push">
   <div id="panel-left" class="slider-panel">
     <ul>
-      <li><i class="fa fa-home"></i><a href="#">Home</a></li>
-      <li><i class="fa fa-folder-o"></i><a href="#">Collections</a></li>
-      <li><i class="fa fa-bookmark"></i><a href="#">Bookmarks</a></li>
-      <li><i class="fa fa-bar-chart"></i><a href="#">Stats</a></li>
-      <li><i class="fa fa-plus"></i><a href="#">New Story</a></li>
+      <li><i class="fa fa-home"></i><a href="#"><span class="icon-home"></span> Home</a></li>
+      <li><i class="fa fa-folder-o"></i><a href="#"><span class="icon-archive"></span> Collections</a></li>
+      <li><i class="fa fa-bookmark"></i><a href="#"><span class="icon-bookmark"></span> Bookmarks</a></li>
+      <li><i class="fa fa-bar-chart"></i><a href="#"><span class="icon-chart-bar"></span> Stats</a></li>
+      <li><i class="fa fa-plus"></i><a href="#"><span class="icon-plus"></span> New Story</a></li>
     </ul>
   </div>
   <div class="wrapper">
@@ -40,8 +41,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="getting-started.html">Getting Started</a></li>
-            <li><a href="../templates/index.html">Templates</a></li>
+            <li><a href="getting-started.html"><span class="icon-github-circled"></span></a></li>
+            <li><a href="../templates/index.html"><span class="icon-fork"></span></a></li>
           </ul>
         </div>
       </div>
@@ -73,9 +74,9 @@
           <br><br>
           <pre><code class="language-markup">&lt;div class='wrapper'&gt;...&lt;/div&gt;</code></pre>
           <br>
-          Add data-panel="[div-id]" to the &lt;button&gt; or &lt;a&gt; which on clicked will trigger the slide transition
+          Add data-panel="[div-id]" &amp; data-dir="[left right top bottom]"to the &lt;button&gt; or &lt;a&gt; which on clicked will trigger the slide transition
           <br><br>
-          <pre><code class="language-markup">&lt;a href='#' data-panel='example-panel'&gt;slide&lt;/a&gt;</code></pre>
+          <pre><code class="language-markup">&lt;a href='#' data-panel='example-panel' data-dir='[left right top bottom]'&gt;slide&lt;/a&gt;</code></pre>
           <br>
           Voila! Nothing else to do! Check out the example code below. Also view the demo by clicking at the top left button in the navbar.
           <h3><b>Example</b></h3><hr>
