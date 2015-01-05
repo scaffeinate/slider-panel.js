@@ -1,7 +1,8 @@
 +(function() {
-  var Plugin, SlidePanel, old, position, zIndex;
+  'use strict';
+  var Plugin, SliderPanel, old, position, zIndex;
   Plugin = void 0;
-  SlidePanel = void 0;
+  SliderPanel = void 0;
   old = void 0;
   position = void 0;
   zIndex = void 0;
@@ -11,24 +12,23 @@
       $this = void 0;
       options = void 0;
       $this = $(this);
-      options = $.extend({}, SlidePanel.DEFAULTS, $this.data());
-      return new SlidePanel(this, options);
+      options = $.extend({}, SliderPanel.DEFAULTS, $this.data());
+      return new SliderPanel(this, options);
     });
   };
-  "use strict";
   position = 0;
   zIndex = 0;
-  SlidePanel = function(element, options) {
+  SliderPanel = function(element, options) {
     return this.init(element, options);
   };
-  SlidePanel.DEFAULTS = {
+  SliderPanel.DEFAULTS = {
     overlayClass: "overlay",
     bodyClass: "body",
     wrapperClass: "wrapper",
     slideOutClass: "slide-out",
     overlayTemplate: "<div class=\"overlay\"></div>"
   };
-  SlidePanel.prototype.init = function(element, options) {
+  SliderPanel.prototype.init = function(element, options) {
     var _this;
     _this = void 0;
     this.$element = $(element);
@@ -58,7 +58,7 @@
     this.$panel.addClass(this.slideInClass);
     return this.slide();
   };
-  SlidePanel.prototype.slide = function() {
+  SliderPanel.prototype.slide = function() {
     if (position % 2 === 0) {
       this.$panel.removeClass(this.options.slideOutClass);
       this.$panel.addClass(this.slideInClass);
@@ -73,8 +73,8 @@
     return position++;
   };
   old = $.fn.button;
-  $.fn.slidepanel = Plugin;
-  $.fn.slidepanel.Constructor = SlidePanel;
+  $.fn.sliderpanel = Plugin;
+  $.fn.sliderpanel.Constructor = SliderPanel;
   return $(window).on("load", function() {
     return $("body").find("[data-panel]").each(function() {
       var $this;

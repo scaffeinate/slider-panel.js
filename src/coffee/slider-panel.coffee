@@ -1,6 +1,7 @@
 +(->
+  'use strict'
   Plugin = undefined
-  SlidePanel = undefined
+  SliderPanel = undefined
   old = undefined
   position = undefined
   zIndex = undefined
@@ -9,24 +10,22 @@
       $this = undefined
       options = undefined
       $this = $(this)
-      options = $.extend({}, SlidePanel.DEFAULTS, $this.data())
-      new SlidePanel(this, options)
+      options = $.extend({}, SliderPanel.DEFAULTS, $this.data())
+      new SliderPanel(this, options)
 
-
-  "use strict"
   position = 0
   zIndex = 0
-  SlidePanel = (element, options) ->
+  SliderPanel = (element, options) ->
     @init element, options
 
-  SlidePanel.DEFAULTS =
+  SliderPanel.DEFAULTS =
     overlayClass: "overlay"
     bodyClass: "body"
     wrapperClass: "wrapper"
     slideOutClass: "slide-out"
     overlayTemplate: "<div class=\"overlay\"></div>"
 
-  SlidePanel::init = (element, options) ->
+  SliderPanel::init = (element, options) ->
     _this = undefined
     @$element = $(element)
     @options = options
@@ -53,7 +52,7 @@
     @$panel.addClass @slideInClass
     @slide()
 
-  SlidePanel::slide = ->
+  SliderPanel::slide = ->
     if position % 2 is 0
       @$panel.removeClass @options.slideOutClass
       @$panel.addClass @slideInClass
@@ -67,8 +66,8 @@
     position++
 
   old = $.fn.button
-  $.fn.slidepanel = Plugin
-  $.fn.slidepanel.Constructor = SlidePanel
+  $.fn.sliderpanel = Plugin
+  $.fn.sliderpanel.Constructor = SliderPanel
   $(window).on "load", ->
     $("body").find("[data-panel]").each ->
       $this = undefined

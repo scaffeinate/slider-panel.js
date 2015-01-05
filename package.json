@@ -1,12 +1,20 @@
 {
-  "name": "medium-slider",
-  "description": "A simple slider panel inspired from medium.com",
+  "name": "slider-panel",
+  "description": "A simple sliding panel to display off-canvas contents",
   "version": "1.0",
   "license": "MIT",
+  "homepage": "http://sudharti.github.io/slider-panel/",
   "author": {
     "name": "Sudharsanan M",
     "email": "sudhar.ti@gmail.com",
     "url": "http://github.com/sudharti"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudharti/slider-panel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sudharti/slider-panel/issues"
   },
   "engines": {
     "node": ">= 0.10.0"

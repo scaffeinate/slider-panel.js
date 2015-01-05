@@ -1,6 +1,6 @@
-Medium Slider
+Slider Panel
 =============
-Checkout the [demo](http://sudharti.github.io/medium-slider.js/)
+Checkout the [demo](http://sudharti.github.io/slider-panel/)
 
 A simple sliding panel to display off-canvas contents. The panel pushes the exiting body content to the right and smoothly transitions into the view area. This addon uses css transforms (translate3d) and cubic bezier transitions to achieve the sliding effect.
 
@@ -13,8 +13,8 @@ A simple sliding panel to display off-canvas contents. The panel pushes the exit
 
 Getting Started
 ===============
-- [Download](https://github.com/sudharti/medium-slider.js/archive/v1.0.zip)
-- Checkout the Docs at [http://sudharti.github.io/medium-slider.js/](http://sudharti.github.io/medium-slider.js/)
+- [Download](https://github.com/sudharti/slider-panel/archive/v1.0.zip)
+- Checkout the Docs at [http://sudharti.github.io/slider-panel/](http://sudharti.github.io/slider-panel/)
 
 PR
 ==
@@ -24,7 +24,7 @@ PR
 
 Issues
 ======
-You can raise issues at https://github.com/sudharti/medium-slider.js/issues
+You can raise issues at https://github.com/sudharti/slider-panel/issues
 
 License
 =======

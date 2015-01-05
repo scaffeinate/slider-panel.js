@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
       dist: {
-        src: 'dist/js/medium-slider.js',
+        src: 'dist/js/<%= pkg.name %>.js',
         dest: 'dist/js/<%= pkg.name %>.min.js'
       }
     },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'dist/css',
-          src: ['medium-slider.css'],
+          src: ['<%= pkg.name %>.css'],
           dest: 'dist/css',
           ext: '.min.css'
         }]
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'dist/js/medium-slider.js': 'src/coffee/medium-slider.coffee', // 1:1 compile
+          'dist/js/<%= pkg.name %>.js': 'src/coffee/<%= pkg.name %>.coffee', // 1:1 compile
         },
         options: {
           bare: true
