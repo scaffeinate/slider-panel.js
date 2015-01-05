@@ -10,11 +10,14 @@ body[data-slide='push'] {
   @include dimension(100%, 100%);
 }
 
+.dim {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 .overlay {
   @include dimension(100%, 100%);
   position: fixed;
   display: none;
-  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .wrapper, .slider-panel {

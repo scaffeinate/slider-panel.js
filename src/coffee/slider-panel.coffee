@@ -19,7 +19,8 @@
     bodyClass: "body"
     wrapperClass: "wrapper"
     slideOutClass: "slide-out"
-    overlayTemplate: "<div class=\"overlay\"></div>"
+    dimClass: "dim"
+    overlayTemplate: "<div class=\"overlay dim\"></div>"
 
   SliderPanel::init = (element, options) ->
     @$element = $(element)
@@ -39,6 +40,10 @@
       zIndex = 0
     else
       zIndex = $("body").css("zIndex")
+
+    if @options.dim is false
+      @$overlay.removeClass options.dimClass
+
     @$element.css "zIndex", zIndex + 1
     @$overlay.css "zIndex", zIndex + 1
     @$panel.css "zIndex", zIndex + 2
@@ -51,13 +56,15 @@
     if position % 2 is 0
       @$panel.removeClass @options.slideOutClass
       @$panel.addClass @slideInClass
-      @$wrapper.addClass @slideInClass
       @$overlay.css "display", "block"
+      unless $("body").data("slide") is "overlay"
+        @$wrapper.addClass @slideInClass
     else
       @$panel.removeClass @slideInClass
       @$panel.addClass "slide-out"
-      @$wrapper.removeClass @slideInClass
       @$overlay.css "display", "none"
+      unless $("body").data("slide") is "overlay"
+        @$wrapper.removeClass @slideInClass
     position++
 
   old = $.fn.button

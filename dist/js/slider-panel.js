@@ -23,7 +23,8 @@
     bodyClass: "body",
     wrapperClass: "wrapper",
     slideOutClass: "slide-out",
-    overlayTemplate: "<div class=\"overlay\"></div>"
+    dimClass: "dim",
+    overlayTemplate: "<div class=\"overlay dim\"></div>"
   };
   SliderPanel.prototype.init = function(element, options) {
     var _this;
@@ -46,6 +47,9 @@
     } else {
       zIndex = $("body").css("zIndex");
     }
+    if (this.options.dim === false) {
+      this.$overlay.removeClass(options.dimClass);
+    }
     this.$element.css("zIndex", zIndex + 1);
     this.$overlay.css("zIndex", zIndex + 1);
     this.$panel.css("zIndex", zIndex + 2);
@@ -58,13 +62,17 @@
     if (position % 2 === 0) {
       this.$panel.removeClass(this.options.slideOutClass);
       this.$panel.addClass(this.slideInClass);
-      this.$wrapper.addClass(this.slideInClass);
       this.$overlay.css("display", "block");
+      if ($("body").data("slide") !== "overlay") {
+        this.$wrapper.addClass(this.slideInClass);
+      }
     } else {
       this.$panel.removeClass(this.slideInClass);
       this.$panel.addClass("slide-out");
-      this.$wrapper.removeClass(this.slideInClass);
       this.$overlay.css("display", "none");
+      if ($("body").data("slide") !== "overlay") {
+        this.$wrapper.removeClass(this.slideInClass);
+      }
     }
     return position++;
   };
