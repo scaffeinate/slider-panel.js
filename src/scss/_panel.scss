@@ -1,0 +1,32 @@
+div.styled {
+  padding: 20px;
+  ul {
+    list-style: none; 
+    padding: 0px;
+    li {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 7px;
+      cursor: pointer;  
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      span {
+        float: right;
+        font-size: 1.7rem;
+      }
+      &:hover {
+        background-color: #5cb85c;
+      };
+    }
+  }
+
+  hr {
+    border-top: 1px solid #505050;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+}

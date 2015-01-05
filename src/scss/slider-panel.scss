@@ -2,6 +2,7 @@
 @import '_transform';
 @import '_dimension';
 @import '_variables';
+@import '_panel';
 
 body[data-slide='push'] {
   margin: 0;
@@ -78,6 +79,7 @@ body[data-slide='push'] {
 
 .slider-panel{
   position: fixed;
+  overflow-x: auto;
   visibility: hidden;  
   border-radius: 0;
 }

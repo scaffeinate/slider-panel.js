@@ -57,6 +57,11 @@ module.exports = function(grunt) {
     },
     sass: {
       dist: {
+        options: {
+          style: 'expanded',
+          sourcemap: 'none',
+          banner: '<%= banner %>'
+        },
         files: [{
           expand: true,
           flatten: true,
