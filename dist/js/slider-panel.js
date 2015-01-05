@@ -1,19 +1,16 @@
 +(function() {
   'use strict';
   var Plugin, SliderPanel, old, position, zIndex;
-  Plugin = void 0;
-  SliderPanel = void 0;
-  old = void 0;
-  position = void 0;
-  zIndex = void 0;
-  Plugin = function() {
+  Plugin = function(options) {
     return this.each(function() {
-      var $this, options;
-      $this = void 0;
-      options = void 0;
+      var $this;
       $this = $(this);
-      options = $.extend({}, SliderPanel.DEFAULTS, $this.data());
-      return new SliderPanel(this, options);
+      if (options === undefined) {
+        this.options = $.extend({}, SliderPanel.DEFAULTS, $this.data());
+      } else {
+        this.options = $.extend({}, SliderPanel.DEFAULTS, options);
+      }
+      return new SliderPanel(this, this.options);
     });
   };
   position = 0;
@@ -30,7 +27,6 @@
   };
   SliderPanel.prototype.init = function(element, options) {
     var _this;
-    _this = void 0;
     this.$element = $(element);
     this.options = options;
     this.slideInClass = "slide-in-" + options.dir;

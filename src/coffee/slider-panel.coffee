@@ -1,17 +1,13 @@
 +(->
   'use strict'
-  Plugin = undefined
-  SliderPanel = undefined
-  old = undefined
-  position = undefined
-  zIndex = undefined
-  Plugin = ->
+  Plugin = (options) ->
     @each ->
-      $this = undefined
-      options = undefined
       $this = $(this)
-      options = $.extend({}, SliderPanel.DEFAULTS, $this.data())
-      new SliderPanel(this, options)
+      if options is `undefined`
+        this.options = $.extend({}, SliderPanel.DEFAULTS, $this.data())
+      else
+        this.options = $.extend({}, SliderPanel.DEFAULTS, options)
+      new SliderPanel(this, this.options)
 
   position = 0
   zIndex = 0
@@ -26,7 +22,6 @@
     overlayTemplate: "<div class=\"overlay\"></div>"
 
   SliderPanel::init = (element, options) ->
-    _this = undefined
     @$element = $(element)
     @options = options
     @slideInClass = "slide-in-" + options.dir

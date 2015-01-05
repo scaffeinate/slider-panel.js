@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .navbar {
@@ -10,24 +10,31 @@ body {
   color: #fff !important;
 }
 
-.navbar-brand {
-  font-weight: lighter;
+.navbar-inverse a:hover {
+  color: #216aa3 !important;
 }
 
 #slide-btn {
   position: absolute;
   top: 0;
   left: 0;
-  font-weight: bold;
-  font-size: 2.25rem;
+  margin-top: 5px;
+  margin-left: 2%;
+  font-size: 3rem;
   color: #fff;
-  margin-top: 10px;
-  margin-left: 35px;
-  background-color: #000;
+  background-color: #202020;
   text-decoration: none;
-  padding: 0px 7px;  
+}
+
+.icon-github-circled {
+  font-size: 1.75rem;
 }
 
 #panel-left {
   background-color: #202020;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #f4f4f4;
 }
