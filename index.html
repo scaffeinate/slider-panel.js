@@ -9,6 +9,7 @@
   <title>Slider Panel</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" title="Slider">
   <link href='http://fonts.googleapis.com/css?family=Open Sans:400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="dist/css/slider-panel.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" charset="utf-8">
@@ -17,7 +18,7 @@
   <link rel="stylesheet" href="assets/css/fontello-embedded.css" type="text/css" charset="utf-8">
 </head>
 <body data-slide="push">
-  <div id="sl-panel" class="slider-panel styled">
+  <div id="l-panel" class="slider-panel styled">
     <h4><b>Slider Panel</b></h4><hr>
     <ul>
       <li><i class="fa fa-home"></i><a href="#"><span class="icon-home"></span> Home</a></li>
@@ -26,6 +27,22 @@
       <li><i class="fa fa-bar-chart"></i><a href="#"><span class="icon-chart-bar"></span> Stats</a></li>
       <li><i class="fa fa-plus"></i><a href="#"><span class="icon-plus"></span> New Story</a></li>
     </ul>
+  </div>
+  <div id="r-panel" class="slider-panel styled">
+    <h4><b>Slider Panel</b></h4><hr>
+    <ul>
+      <li><i class="fa fa-home"></i><a href="#"><span class="icon-home"></span> Home</a></li>
+      <li><i class="fa fa-folder-o"></i><a href="#"><span class="icon-archive"></span> Collections</a></li>
+      <li><i class="fa fa-bookmark"></i><a href="#"><span class="icon-bookmark"></span> Bookmarks</a></li>
+      <li><i class="fa fa-bar-chart"></i><a href="#"><span class="icon-chart-bar"></span> Stats</a></li>
+      <li><i class="fa fa-plus"></i><a href="#"><span class="icon-plus"></span> New Story</a></li>
+    </ul>
+  </div>
+  <div id="t-panel" class="slider-panel styled">
+    <h6 class="text-center">If you really like this project you can help Spread the Word. You can also star the project on Github :) <span class="icon-github-circled"></span></h6>
+  </div>
+  <div id="b-panel" class="slider-panel styled">
+    <h6 class="text-center">If you really like this project you can help Spread the Word. You can also star the project on Github :) <span class="icon-github-circled"></span></h6></h6>
   </div>
   <div class="wrapper">
     <nav class="navbar navbar-default navbar-inverse" role="navigation">
@@ -37,7 +54,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="#" id="slide-btn" data-panel="sl-panel" data-dir="left">
+          <a href="#" id="slide-btn" data-panel="l-panel" data-dir="left">
             <span class="icon-menu-2"></span>
           </a>
           <a href="#" class="navbar-brand hidden-xs"><b>Slider Panel</b></a>
@@ -55,7 +72,7 @@
           <div class="row">
             <h3><b>Slider Panel</b></h3>
             <p>A simple sliding panel plugin to display off-canvas contents.</p>
-            <a href="https://github.com/sudharti/slider-panel/archive/v1.0.zip" class="btn btn-success">Download</a>
+            <a href="https://github.com/sudharti/slider-panel/archive/v1.1.zip" class="btn btn-success">Download</a>
           </div>
           <br>
           <div class="row">
@@ -63,8 +80,8 @@
               <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li role="presentation" class="active"><a href="#getting-started" aria-controls="getting-started" role="tab" data-toggle="tab">Getting Started</a></li>
                 <li role="presentation"><a href="#usage" aria-controls="usage" role="tab" data-toggle="tab">Usage</a></li>
-                <li role="presentation"><a href="#example" aria-controls="example" role="tab" data-toggle="tab">Example</a></li>
-                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab">Examples</a></li>
+                <li role="presentation"><a href="#issues" aria-controls="issues" role="tab" data-toggle="tab">Issues</a></li>
               </ul>
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="getting-started">
@@ -72,9 +89,9 @@
                   <p>
                     A simple sliding panel to display off-canvas contents. The panel pushes the exiting body content to the specified direction and smoothly transitions into the view area. This plugin uses css transforms (translate3d) and cubic bezier transitions to achieve the sliding effect.
                   </p>
-                  <img src="assets/img/coffeescript.png" alt="Coffeescript" style="width: 85px;">
+                  <img src="assets/img/coffeescript.png" alt="Coffeescript">
                   <span class="icon-plus"></span>
-                  <img src="assets/img/sass.png" alt="Sass" style="width: 85px;">
+                  <img src="assets/img/sass.png" alt="Sass">
                   <h3><b>Quick Start</b></h3>
                   <ul>
                     <li><a href="https://github.com/sudharti/slider-panel/archive/v1.0.zip">Download</a> the plugin</li>
@@ -116,8 +133,8 @@
   │       ├── _translate.scss
   │       ├── _variables.scss
   │       └── slider-panel.scss
+  ├── code-templates/
   ├── index.html
-  ├── template.html
   ├── Gruntfile.js
   ├── package.json
   ├── README.md
@@ -131,14 +148,9 @@
                   <pre class="language-bash"><code>npm install -g grunt-cli</code></pre>
                   <h4><b>Grunt Tasks</b></h4>
                   <ul>
-                    <li>grunt clean: Cleans up the dist/ directory</li>
                     <li>grunt sass: Compiles the Sass files from src/ and generates css in dist/css</li>
                     <li>grunt coffee: Compiles coffee files from src/ and generates js in dist/js</li>
-                    <li>grunt uglify: Uglify is used to minify the generated Javascript file</li>
-                    <li>grunt cssmin: Minifies the generated CSS file</li>
-                    <li>grunt: The default grunt task which performs the above tasks</li>
-                    <li>grunt connect: Task to connect a server</li>
-                    <li>grunt watch: Watches for changes in scss &amp; coffee files and when it occurs performs grunt again</li>
+                    <li>grunt: The default grunt task</li>
                     <li>grunt server: Start the server, performs grunt connect and grunt watch</li>
                   </ul>
                   <h4><b>Start Customizing</b></h4>
@@ -148,13 +160,97 @@
                     <li>Start the server using <b>grunt server</b></li>
                     <li>Any changes you make to the scss files will trigger the <b>watch</b> task which will regenerate the dist/ files</li>
                   </ol>
+                  <h3><b>Browser Compatability</b></h3>
+                  <ul>
+                    <li>Firefox 4.0 (2.0)+</li>
+                    <li>Chrome 4.0+</li>
+                    <li>Internet Explorer 10+ (Really? Even IE? :O)</li>
+                    <li>Opera 10.5+</li>
+                    <li>Safari 3.1+</li>
+                  </ul><br>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="usage">...</div>
-                <div role="tabpanel" class="tab-pane" id="example">
-                  <h3><b>Examples</b></h3><hr>
-                  <pre data-src="template.html"></pre>
+                <div role="tabpanel" class="tab-pane" id="usage">
+                  <h3><b>Usage</b></h3>
+                  <h4><b>Data Attributes</b></h4>
+                  <p>Slide panel is automatically invoked by setting data attributes</p>
+                  <ol>
+                    <li>Add data-slide to body <code>&lt;body data-slide='[push overlay]'&gt;...&lt;/body&gt;</code></li>
+                    <li>Add .slider-panel class to panel <code>&lt;div class='slider-panel'&gt;...&lt;/div&gt;</code></li>
+                    <li>Add .wrapper class <code>&lt;div class='wrapper'&gt;...&lt;/div&gt;</code></li>
+                    <li>Add data-panel='panel-id', data-dir='[left right]' &amp; data-dim='[true false]' to calling element <code>&lt;a data-panel='panel-id' data-dir='[left right]' data-dim='[true false]' href&gt;...&lt;/a&gt;</code></li>
+                  </ol>
+                  <pre data-src="code-templates/usage-data-attrib.html"></pre><br>
+                  <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Attribute</th>
+                        <th>Options</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>data-slide</td>
+                        <td>
+                          [push overlay]
+                        </td>
+                        <td>Whether the panel shoudl push or overlay over content</td>
+                      </tr>
+                      <tr>
+                        <td>data-panel</td>
+                        <td>[target panel id]</td>
+                        <td>The Target panel id</td>
+                      </tr>
+                      <tr>
+                        <td>data-dir</td>
+                        <td>
+                          [left right top bottom]
+                        </td>
+                        <td>
+                          The Direction in which panel should appear
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>data-dim</td>
+                        <td>[true false]</td>
+                        <td>Dim page content or not</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br>
+                  <h4><b>Using Javascript</b></h4>
+                  <p> Alternatively you can manually invoke the slider panel using Javascript. 
+                  <ol>
+                    <li>Add data-slide to body <code>&lt;body data-slide='[push overlay]'&gt;...&lt;/body&gt;</code></li>
+                    <li>Add .slider-panel class to panel <code>&lt;div class='slider-panel'&gt;...&lt;/div&gt;</code></li>
+                    <li>Add .wrapper class <code>&lt;div class='wrapper'&gt;...&lt;/div&gt;</code></li>
+                    <li><code>$(element).sliderpanel(options);</code></li>
+                  </ol>
+                  options are provided as a Javascript Object { }</p>
+                  <pre data-src="code-templates/usage-javascript.html"></pre>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                <div role="tabpanel" class="tab-pane" id="examples">
+                  <h3><b>Examples</b></h3>
+                  <div class="btn-group" role="group">
+                    <button class="btn btn-default" data-panel="l-panel" data-dir="left">
+                    Left</button>
+                    <button class="btn btn-default" data-panel="r-panel" data-dir="right" data-dim="false">Right</button>
+                    <button id="btn-top" class="btn btn-default">Top</button>
+                    <button id="btn-bottom" class="btn btn-default">Bottom</button>
+                  </div>
+                  <pre data-src="code-templates/example-template.html"></pre>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="issues">
+                  <h3><b>Issues</b></h3>
+                  You can raise issues at <a href="https://github.com/sudharti/slider-panel/issues">https://github.com/sudharti/slider-panel/issues</a>
+                  <h3><b>Contributing</b></h3>
+                  If you want to contribute to this project
+                  <ol>
+                    <li>Fork the Project at https://github.com/sudharti/slider-panel</li>
+                    <li>Make changes</li>
+                    <li>Send Pull Request</li>
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
@@ -173,6 +269,24 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/prism.js"></script>
   <script src="dist/js/slider-panel.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      $("#btn-top").click(function(){
+        $(this).sliderpanel({
+          panel: "t-panel",
+          dir: "top",
+          dim: false
+        });
+      });
+      $("#btn-bottom").click(function(){
+        $(this).sliderpanel({
+          panel: "b-panel",
+          dir: "bottom",
+          dim: true
+        });
+      });
+    });
+  </script>
   <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

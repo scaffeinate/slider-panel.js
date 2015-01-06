@@ -1,0 +1,23 @@
+<button class="btn btn-default" data-panel="l-panel" data-dir="left">Left</button>
+<button class="btn btn-default" data-panel="r-panel" data-dir="right" data-dim="false">Right</button>
+<button id="btn-top" class="btn btn-default">Top</button>
+<button id="btn-bottom" class="btn btn-default">Bottom</button>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#btn-top").click(function(){
+      $(this).sliderpanel({
+        panel: "t-panel",
+        dir: "top",
+        dim: false
+      });
+    });
+    $("#btn-bottom").click(function(){
+      $(this).sliderpanel({
+        panel: "b-panel",
+        dir: "bottom",
+        dim: true
+      });
+    });
+  });
+</script>
