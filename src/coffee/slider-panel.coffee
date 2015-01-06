@@ -9,7 +9,6 @@
         this.options = $.extend({}, SliderPanel.DEFAULTS, options)
       new SliderPanel(this, this.options)
 
-  position = 0
   zIndex = 0
   SliderPanel = (element, options) ->
     @init element, options
@@ -25,15 +24,15 @@
   SliderPanel::init = (element, options) ->
     @$element = $(element)
     @options = options
+    @position = 0
     @slideInClass = "slide-in-" + options.dir
     @dirClass = options.dir + "-panel"
     @$panel = $("#" + options.panel)
     @$wrapper = $("." + options.wrapperClass)
     _this = this
-    if position is 0
-      $(".wrapper").prepend @options.overlayTemplate
-      $(".overlay").click ->
-        _this.slide()
+  
+    $(".overlay").click ->
+      _this.slide()
 
     @$overlay = $(".overlay")
     if $("body").css("zIndex") is "auto"
@@ -43,6 +42,8 @@
 
     if @options.dim is false
       @$overlay.removeClass options.dimClass
+    else
+      @$overlay.addClass options.dimClass
 
     @$element.css "zIndex", zIndex + 1
     @$overlay.css "zIndex", zIndex + 1
@@ -53,7 +54,7 @@
     @slide()
 
   SliderPanel::slide = ->
-    if position % 2 is 0
+    if @position is 0
       @$panel.removeClass @options.slideOutClass
       @$panel.addClass @slideInClass
       @$overlay.css "display", "block"
@@ -65,12 +66,13 @@
       @$overlay.css "display", "none"
       unless $("body").data("slide") is "overlay"
         @$wrapper.removeClass @slideInClass
-    position++
+    @position++
 
   old = $.fn.button
   $.fn.sliderpanel = Plugin
   $.fn.sliderpanel.Constructor = SliderPanel
   $(window).on "load", ->
+    $(".wrapper").prepend "<div class=\"overlay dim\"></div>"
     $("body").find("[data-panel]").each ->
       $this = undefined
       $this = $(this)

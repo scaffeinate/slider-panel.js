@@ -1,6 +1,6 @@
 +(function() {
   'use strict';
-  var Plugin, SliderPanel, old, position, zIndex;
+  var Plugin, SliderPanel, old, zIndex;
   Plugin = function(options) {
     return this.each(function() {
       var $this;
@@ -13,7 +13,6 @@
       return new SliderPanel(this, this.options);
     });
   };
-  position = 0;
   zIndex = 0;
   SliderPanel = function(element, options) {
     return this.init(element, options);
@@ -30,17 +29,15 @@
     var _this;
     this.$element = $(element);
     this.options = options;
+    this.position = 0;
     this.slideInClass = "slide-in-" + options.dir;
     this.dirClass = options.dir + "-panel";
     this.$panel = $("#" + options.panel);
     this.$wrapper = $("." + options.wrapperClass);
     _this = this;
-    if (position === 0) {
-      $(".wrapper").prepend(this.options.overlayTemplate);
-      $(".overlay").click(function() {
-        return _this.slide();
-      });
-    }
+    $(".overlay").click(function() {
+      return _this.slide();
+    });
     this.$overlay = $(".overlay");
     if ($("body").css("zIndex") === "auto") {
       zIndex = 0;
@@ -49,6 +46,8 @@
     }
     if (this.options.dim === false) {
       this.$overlay.removeClass(options.dimClass);
+    } else {
+      this.$overlay.addClass(options.dimClass);
     }
     this.$element.css("zIndex", zIndex + 1);
     this.$overlay.css("zIndex", zIndex + 1);
@@ -59,7 +58,7 @@
     return this.slide();
   };
   SliderPanel.prototype.slide = function() {
-    if (position % 2 === 0) {
+    if (this.position === 0) {
       this.$panel.removeClass(this.options.slideOutClass);
       this.$panel.addClass(this.slideInClass);
       this.$overlay.css("display", "block");
@@ -74,12 +73,13 @@
         this.$wrapper.removeClass(this.slideInClass);
       }
     }
-    return position++;
+    return this.position++;
   };
   old = $.fn.button;
   $.fn.sliderpanel = Plugin;
   $.fn.sliderpanel.Constructor = SliderPanel;
   return $(window).on("load", function() {
+    $(".wrapper").prepend("<div class=\"overlay dim\"></div>");
     return $("body").find("[data-panel]").each(function() {
       var $this;
       $this = void 0;
