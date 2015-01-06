@@ -43,7 +43,10 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      
+      all: {
+        files: ['**/*.scss', '**/*.coffee'],
+        tasks: ['default']
+      }
     },
     coffee: {
       compile: {

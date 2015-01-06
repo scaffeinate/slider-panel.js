@@ -11,7 +11,7 @@ body {
 }
 
 .navbar-inverse a:hover {
-  color: #216aa3 !important;
+  color: #ccc !important;
 }
 
 #slide-btn {
@@ -20,18 +20,18 @@ body {
   left: 0;
   margin-top: 5px;
   margin-left: 2%;
-  font-size: 3rem;
+  font-size: 2.75rem;
   color: #fff;
   background-color: #202020;
   text-decoration: none;
 }
 
-.icon-github-circled {
-  font-size: 1.75rem;
+#slide-btn:hover {
+  color: #5cb85c !important;
 }
 
-#panel-left {
-  background-color: #202020;
+.icon-github-circled {
+  font-size: 1.75rem;
 }
 
 .footer {

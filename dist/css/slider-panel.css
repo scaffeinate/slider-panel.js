@@ -4,6 +4,7 @@
 
 div.styled {
   padding: 20px;
+  background-color: #202020;
 }
 div.styled ul {
   list-style: none;
