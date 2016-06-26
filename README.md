@@ -1,4 +1,4 @@
-##[Slider Panel v1.1](http://sudharti.github.io/slider-panel/)
+##[Slider Panel v1.1](http://sudharti.github.io/slider-panel.js/)
 
 A simple sliding panel to display off-canvas contents. The panel pushes the exiting body content to the specified direction and smoothly transitions into the view area. This plugin uses css transforms (translate3d) and cubic bezier transitions to achieve the sliding effect.
 
@@ -6,11 +6,11 @@ A simple sliding panel to display off-canvas contents. The panel pushes the exit
 
 ###Getting Started
 ####Quick Start
-- [Download](https://github.com/sudharti/slider-panel/archive/v1.1.zip)
+- [Download](https://github.com/sudharti/slider-panel.js/archive/v1.1.zip)
 - or Clone `git clone https://github.com/sudharti/slider-panel.git`
 - Include js and css from dist/
 - Include JQuery depedency
-- Check the [Docs](sudharti.github.io/slider-panel/)
+- Check the [Docs](sudharti.github.io/slider-panel.js/)
 - Plug it in your code.
 
 ###Folder Structure
@@ -46,10 +46,10 @@ slider-panel/
   └── LICENSE
 ```
 ###Issues
-You can raise issues at [https://github.com/sudharti/slider-panel/issues](https://github.com/sudharti/slider-panel/issues)
+You can raise issues at [https://github.com/sudharti/slider-panel.js/issues](https://github.com/sudharti/slider-panel.js/issues)
 
 ###Contributing
-- Fork the Project at [https://github.com/sudharti/slider-panel](Fork the Project at https://github.com/sudharti/slider-panel)
+- Fork the Project at [https://github.com/sudharti/slider-panel.js](Fork the Project at https://github.com/sudharti/slider-panel.js)
 - Make Changes
 - Send PR
 
